@@ -1,0 +1,177 @@
+%% @Description : This is a LaTeX template for long homework assignments. This 
+%% template is based on the AMATH 582 homework template of the University of
+%% Washington, provided as is by Overleaf.
+%% @LastEditors : Junyong Zhao (junyong@seas.upenn.edu)
+
+\documentclass{article}
+
+% Formatting
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage[titletoc,title]{appendix}
+
+% Math
+\usepackage{amsmath,amsfonts,amssymb,mathtools}
+
+% Images
+\usepackage{graphicx,float}
+
+% Algorithms
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{algorithmic}
+
+% Code syntax highlighting
+\usepackage{minted}
+\usemintedstyle{borland}
+
+% References
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+% Title content
+\title{AMATH 582 Homework 1}
+\author{Your Name}
+\date{January 24, 2020}
+
+\begin{document}
+
+\maketitle
+
+% Abstract
+\begin{abstract}
+    Add your abstract here.
+\end{abstract}
+
+% Introduction and Overview
+\section{Introduction and Overview}
+Add your introduction and overview here.
+
+% Example Subsection
+\subsection{Subsection Title}
+This is a subsection.
+
+% Example Subsubsection
+\subsubsection{Subsubsection Title}
+This is a subsubsection.
+
+%  Theoretical Background
+\section{Theoretical Background}
+Add your theoretical background here. Some example text: As we learned from our
+textbook \cite{kutz_2013}, Fourier introduced the concept of representing a
+given function $f(x)$ by a trigonometric series of sines and cosines:
+\begin{equation}
+    f(x) = \frac{a_0}{2} + \sum_{i=1}^\infty \left(a_n\cos{nx} + b_n\sin{nx}
+    \right) \quad x \in (-\pi,\pi].
+    \label{eqn:fourierseries}
+\end{equation}
+You can reference numbered equations, figures, tables, algorithms, and code like
+this: Equation~\ref{eqn:fourierseries}, etc.
+
+% Algorithm Implementation and Development
+\section{Algorithm Implementation and Development}
+Add your algorithm implementation and development here. See Algorithm~
+\ref{alg:example} for how to include an algorithm in your document. This is how
+to make an \textit{ordered} list:
+\begin{enumerate}
+    \item Fluffy swallowed a marble.
+    \item I took Fluffy to the vet.
+    \item They took an ultrasound of Fluffy's intestines.
+\end{enumerate}
+
+\begin{algorithm}
+    \begin{algorithmic}
+        \STATE{Import data from \texttt{Testdata.mat}}
+        \FOR{$j = 1:20$}
+        \STATE{Extract measurement $j$ from \texttt{Undata}}
+        \STATE{Do something useful}
+        \ENDFOR
+        \IF{$i\geq 5$}
+        \STATE{$i\gets i-1$}
+        \ELSE
+        \IF{$i\leq 3$}
+        \STATE{$i\gets i+2$}
+        \ENDIF
+        \ENDIF
+    \end{algorithmic}
+    \caption{Example Algorithm}
+    \label{alg:example}
+\end{algorithm}
+
+% Computational Results
+\section{Computational Results}
+Add your computational results here. See Table~\ref{tab:mascots} for how to
+include a table in your document. See Figure~\ref{fig:dubs} for how to include
+figures in your document.
+
+\begin{table}
+    \centering
+    \begin{tabular}{rll}
+           & Name             & Years        \\
+        \hline
+        1  & Frosty           & 1922-1930    \\
+        2  & Frosty II        & 1930-1936    \\
+        3  & Wasky            & 1946         \\
+        4  & Wasky II         & 1947         \\
+        5  & Ski              & 1954         \\
+        6  & Denali           & 1958         \\
+        7  & King Chinook     & 1959-1968    \\
+        8  & Regent Denali    & 1969         \\
+        9  & Sundodger Denali & 1981-1992    \\
+        10 & King Redoubt     & 1992-1998    \\
+        11 & Prince Redoubt   & 1998         \\
+        12 & Spirit           & 1999-2008    \\
+        13 & Dubs I           & 2009-2018    \\
+        14 & Dubs II          & 2018-Present
+    \end{tabular}
+    \caption{UW mascots as described in \cite{washington_huskies}.}
+    \label{tab:mascots}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{dubs.jpg}
+    \caption{Here is a picture of Dubs \cite{webeck_2018}. Dubs did not swallow
+        a marble.}
+    \label{fig:dubs}
+\end{figure}
+
+% Summary and Conclusions
+\section{Summary and Conclusions}
+Add your summary and conclusions here.
+
+% References
+\printbibliography
+
+% Appendices
+\begin{appendices}
+
+    % MATLAB Functions
+    \section{MATLAB Functions}
+    Add your important MATLAB functions here with a brief implementation
+    explanation. This is how to make an \textbf{unordered} list:
+    \begin{itemize}
+        \item \texttt{y = linspace(x1,x2,n)} returns a row vector of \texttt{n}
+              evenly spaced points between \texttt{x1} and \texttt{x2}.
+        \item \texttt{[X,Y] = meshgrid(x,y)} returns 2-D grid coordinates based
+              on the coordinates contained in the vectors \texttt{x} and
+              \texttt{y}. \text{X} is a matrix where each row is a copy of
+              \texttt{x}, and \texttt{Y} is a matrix where each column is a copy
+              of \texttt{y}. The grid represented by the coordinates \texttt{X}
+              and \texttt{Y} has \texttt{length(y)} rows and \texttt{length(x)}
+              columns.
+    \end{itemize}
+
+    % MATLAB Codes
+    \section{MATLAB Code}
+    Add your MATLAB code here. This section will not be included in your page
+    limit of six pages.
+
+    \begin{listing}[h]
+        \inputminted{matlab}{example.m}
+        \caption{Example code from external file.}
+        \label{listing:examplecode}
+    \end{listing}
+
+\end{appendices}
+
+\end{document}
