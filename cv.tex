@@ -1,0 +1,184 @@
+% @Description : This is my CV for system-related application.
+% @Author      : Junyong Zhao (junyong@seas.upenn.edu)
+
+\documentclass[a4paper]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Junyong Zhao}} & E-mail: junyong@seas.upenn.edu \\
+  https://github.com/shikibu-z & Mobile: +1 (267) 721-1352 \\
+\end{tabular*}
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{University of Pennslyvania, Philadelphia, PA}{United States}
+{Dual Degree M.S. in Computer \& Information Science and Scientific Computing}
+{Aug 2019 - Present}
+{\scriptsize\footnotesize{\newline\newline\textbf{Cumulative GPA:}
+    3.78/4.00}}
+{\scriptsize\footnotesize{\newline\textbf{Courses:} Operating
+    System Design and Implementation, Database and Information System,
+    Networked System, Analysis of Algorithms, Applied Machine Learning,
+    Introduction to High-Performance Scientific Computing, Numerical Methods and
+    Modeling}}
+
+\resumeSubheading
+{Sichuan University, Chengdu, Sichuan Province}{P. R. China}
+{B.S. in Civil Engineering}{Sept 2014 - June 2018}
+{\scriptsize\footnotesize{\newline\newline\textbf{Major GPA:} 3.5/4.00}}
+{\scriptsize\footnotesize{\newline\textbf{Courses:} Calculus, Linear
+    Algebra, Probability and Statistic, Data Structure and Algorithm Analysis,
+    Computational Mechanics}}
+\resumeSubHeadingListEnd
+
+\vspace{-5pt}
+\section{Research Experience}
+\resumeSubHeadingListStart
+\resumeSubheading{Research Assistant, NetDB@Penn Distributed Systems Lab}
+{Philadelphia, PA}
+{Under the supervison of Dr. Boon Thau Loo, SEAS UPenn}{May 2020 - Present}
+\resumeItemListStart
+\resumeItem{Reconfiguration of Redis and cURL with C-SAW}
+{Participated the development of an novel architecture, C-SAW, that cast
+  software reconfiguration as a data-management process expressed by a new DSL.
+  Reconfigured and evaluated the performance of Redis and cURL with replication,
+  sharding and remote auditing using this architecture.}
+\resumeItem{Debugging Compartmentalized Software}
+{Implemented an interface that controls and interact with the debugging
+  process of each software compartment using Python and a customized GDB Stub.}
+\resumeItem{Serialization in C Language}
+{Participated the development of a C language serializer that handles multiple
+  data-structures for different endpoints with libclang, focusing on memory leak
+  detection and garbage collection.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\vspace{-5pt}
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeSubItem{Redis and cURL Reconfiguration with C-SAW}{Reconfigure Redis and
+  cURL for more features.}
+\begin{itemize}
+  \item Analyzed the general building structure of Redis and cURL.
+  \item Serialized the configuration data structures of Redis and cURL to pass
+        between processes with a specific serialization tool.
+  \item Integrated the software reconfiguration architecture (C-SAW) into cURL,
+        enabling local/remote auditing of download speed in separate machines.
+  \item Designed the evaluation process of modified Redis and cURL with
+        automation scripts. Analyzed Redis' performance via query response rate,
+        requests in different shards, and cumulative latency distribution.
+        Investigated cURL's performance through the download time of files with
+        various sizes in a stabilized internal network.
+  \item Enhancing proof of usability via more software use-cases (work in
+        progress), continue developing in Suricata.
+\end{itemize}
+
+\vspace{2pt}
+\resumeSubItem{Penn-OS Operating System}
+{A operating system implemented in C programming language from scratch.}
+\begin{itemize}
+  \item Implemented a simple shell, scheduler, memory management unit, and a FAT
+        file system.
+  \item Enabled the shell with built-in functions such as \texttt{ls},
+        \texttt{cat}, and \texttt{history}. The shell could also handle
+        synchronous waiting, redirection, terminal signaling, and job controls.
+  \item Implemented different page-swap strategies in the MMU, such as FIFO,
+        Clock algorithm and Last Recent Used. A translation lookaside buffer is
+        also built into the MMU module with the LRU rule to accelerate memory
+        access.
+  \item Designed and implemented a basic FAT file system with an open file table
+        as an image file of 256KB in size, along with a 256 bytes flat FAT
+        table.
+\end{itemize}
+\resumeSubHeadingListEnd
+
+\vspace{-5pt}
+\section{Publications}
+\begin{description}[font=$\bullet$]
+  \item \small{Zhu H., \underline{Zhao J. Y.} and Sultana N. 2021. C-Saw:
+          Distributed Data and Language Co-Design applied to Reconfigurable
+          Software Architecture. Manuscript submitted for review.}
+  \item \small{\underline{Zhao J. Y.}, Zhu H., Sultana N. and Loo B. T. 2020.
+          The Usability of a Debugger Designed for Compartmentalized Systems.
+            [Poster]. Annual Computer Security Applications Conference (ACSAC),
+          Decmber 7-10, Online}
+  \item \small{Carrasquillo S., \underline{Zhao J. Y.}, Zhu H., Sultana N. and
+          Loo B. T. 2020. A Case Study of Fine-Grained Software
+          Compartmentalization using cURL. [Poster]. Annual Computer Security
+          Applications Conference (ACSAC), Decmber 7-10, Online}
+\end{description}
+\vspace{-5pt}
+
+\section{Honors and Awards}
+\begin{description}[font=$\bullet$]
+  \item {First Class College Individual Scholarship - Sichuan University}
+        \vspace{-5pt}
+  \item {Second Class College Individual Scholarship - Sichuan University}
+        \vspace{-5pt}
+\end{description}
+
+\end{document}
