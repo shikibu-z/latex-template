@@ -19,11 +19,11 @@
 %% Fixed undefined reference to \theHWPartners if no partners exist.
 
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesClass{cisXXX}[2016/07/05 CIS XXX Standard LaTeX document class]
-\LoadClass[a4paper, oneside, 11pt]{article}[2005/09/16]
+\ProvidesClass{hw-template}[2016/07/05 CIS XXX Standard LaTeX document class]
+\LoadClass[letterpaper, oneside, 11pt]{article}[2005/09/16]
 
 %% Margins of Text Pages
-\RequirePackage[head=2cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\RequirePackage[head=0.75in, bottom=0.75in, left=0.75in, right=0.75in]{geometry}
 
 %% Authors and Partners
 % \HWauthor{Name}{e-mail}: your name and school e-mail.

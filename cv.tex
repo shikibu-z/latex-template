@@ -1,9 +1,7 @@
-% @Description : This is my CV for system-related application.
-% @Author      : Junyong Zhao (junyong@seas.upenn.edu)
-
 \documentclass[a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{libertine}
+\usepackage{libertinust1math}
 \renewcommand{\ttdefault}{pcr}
 
 \usepackage{latexsym}
@@ -59,129 +57,113 @@
 }
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
-
 \renewcommand{\labelitemii}{$\circ$}
-
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \begin{document}
-
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{{\LARGE Junyong Zhao}} & E-mail: junyong@seas.upenn.edu \\
-  https://github.com/shikibu-z & Mobile: +1 (267) 721-1352 \\
+  \textbf{{\LARGE Junyong Zhao}} & E-mail: junyong at arizona dot edu \\
+  Ph.D. Student at the University of Arizona & https://github.com/shikibu-z \\
 \end{tabular*}
 
 \section{Education}
 \resumeSubHeadingListStart
-\resumeSubheading
-{University of Pennsylvania, Philadelphia, PA}{United States}
-{Dual Degree M.S. in Computer \& Information Science and Scientific Computing}
-{Aug 2019 - Present}
-{\scriptsize\footnotesize{\newline\newline\textbf{Cumulative GPA:}
-    3.8/4.00}}
-{\scriptsize\footnotesize{\newline\textbf{Courses:} Operating
-    System Design and Implementation, Database and Information System,
-    Networked System, Analysis of Algorithms, Applied Machine Learning,
-    Introduction to High-Performance Scientific Computing, Numerical Methods and
-    Modeling}}
+\resumeSubheading{University of Arizona, Tucson, AZ}{United States}
+{Ph.D. Student in Computer Science}{Aug. 2022 - Present}
+{\scriptsize\footnotesize{\newline\newline\textbf{Advisor:} Dr. Lei Cao.
+    Focusing on improving the performance and durability for modern distributed
+    cloud database.}}
 
-\resumeSubheading
-{Sichuan University, Chengdu, Sichuan Province}{P. R. China}
-{B.S. in Civil Engineering}{Sept 2014 - June 2018}
+\resumeSubheading{University of Pennsylvania, Philadelphia, PA}{United States}
+{\textbf{Dual Degree} M.S. in Computer \& Information Science \textnormal{|}
+  Scientific Computing}{Aug. 2019 - May 2022}
+{\scriptsize\footnotesize{\newline\newline\textbf{Cumulative GPA:} 3.8/4.00}}
+{\scriptsize\footnotesize{\newline\textbf{Courses:} Operating System Design and
+    Implementation, Database and Information System, Networked System, Applied
+    Machine Learning}}
+
+\resumeSubheading{Sichuan University, Chengdu, Sichuan Province}{P. R. China}
+{B.S. in Civil Engineering}{Sept. 2014 - Jun. 2018}
 {\scriptsize\footnotesize{\newline\newline\textbf{Major GPA:} 3.5/4.00}}
-{\scriptsize\footnotesize{\newline\textbf{Courses:} Calculus, Linear
-    Algebra, Probability and Statistic, Data Structure and Algorithm Analysis,
-    Computational Mechanics}}
-\resumeSubHeadingListEnd
+{\scriptsize\footnotesize{\newline\textbf{Courses:} Calculus, Linear Algebra,
+    Probability and Statistic, Data Structure and Algorithm Analysis, Computational
+    Mechanics}} \resumeSubHeadingListEnd
 
-\vspace{-5pt}
 \section{Research Experience}
 \resumeSubHeadingListStart
 \resumeSubheading{Research Assistant, NetDB@Penn Distributed Systems Lab}
 {Philadelphia, PA}
-{Under the supervision of Dr. Boon Thau Loo, SEAS UPenn}{May 2020 - Aug 2021}
+{Under the supervision of Dr. Boon Thau Loo, SEAS UPenn}{May 2020 - Aug. 2021}
+
 \resumeItemListStart
 \resumeItem{Reconfiguration of Redis and cURL with C-SAW}
-{Participated the development of a novel architecture, C-SAW, that cast
-  software reconfiguration as a data-management process expressed by a new DSL.
-  Reconfigured and evaluated the performance of Redis and cURL with replication,
-  sharding and remote auditing using this architecture.}
+{Participated the development of a novel architecture, C-SAW, that cast software
+  reconfiguration as a distributed data-management process expressed by a new DSL.
+  Reconfigured and evaluated the performance of Redis and cURL into distributed
+  components with replication, sharding and remote auditing using this
+  architecture.}
+
 \resumeItem{Debugging Compartmentalized Software}
-{Implemented an interface that controls and interact with the debugging
-  process of each software compartment using Python and a customized GDB Stub.}
+{Implemented an interface that controls and interact with the debugging process
+  of each software compartment using Python and a customized GDB Stub.}
+
 \resumeItem{Serialization in C Language}
 {Participated the development of a C language serializer that handles multiple
-  data-structures for different endpoints with libclang, focusing on memory leak
+  data structures for different endpoints with libclang, focusing on memory leak
   detection and garbage collection.}
 \resumeItemListEnd
 \resumeSubHeadingListEnd
 
-\vspace{-5pt}
-\section{Projects}
+\vspace{-2pt}
+\section{Teaching Experience}
 \resumeSubHeadingListStart
-\resumeSubItem{Redis and cURL Reconfiguration with C-SAW}{Reconfigure Redis and
-  cURL for more features.}
-\begin{itemize}
-  \item Analyzed the general building structure of Redis and cURL. Participated
-        the development of a novel architecture, C-SAW, that cast software
-        reconfiguration as a data-management process expressed by a new DSL.
-  \item Serialized the configuration data structures of Redis and cURL to pass
-        between processes with a specific serialization tool.
-  \item Reconfigure cURL with C-SAW, enabling local/remote auditing of download
-        speed in separate machines.
-  \item Designed the evaluation process of modified Redis and cURL with
-        automation scripts. Analyzed Redis' performance via query response rate,
-        requests in different shards, and cumulative latency distribution.
-        Investigated cURL's performance through the download time of files with
-        various sizes in a stabilized internal network.
-  \item Enhancing proof of usability via more software use-cases (work in
-        progress), continue developing in Suricata.
-\end{itemize}
-
-\vspace{2pt}
-\resumeSubItem{Penn-OS Operating System}
-{An operating system implemented in C from scratch.}
-\begin{itemize}
-  \item Implemented a simple shell, scheduler, memory management unit, and a FAT
-        file system.
-  \item Enabled the shell with built-in functions such as \texttt{ls},
-        \texttt{cat}, and \texttt{history}. The shell could also handle
-        synchronous waiting, redirection, terminal signaling, and job controls.
-  \item Implemented different page-swap strategies in the MMU, such as FIFO,
-        Clock algorithm and Last Recent Used. A translation look-aside buffer is
-        also built into the MMU module with the LRU rule to accelerate memory
-        access.
-  \item Designed and implemented a basic FAT file system with an open file table
-        as an image file of 256KB in size, along with a 256 bytes flat FAT
-        table.
-\end{itemize}
+\resumeSubheading{Graduate Assistant, University of Arizona}{Tucson, AZ}
+{CSc 452 Principles of Operating Systems}{Aug. 2022 - Dec. 2022}
+\resumeItemListStart
+\resumeItem{Teaching Assistant}{Hold office hours and handle grading.}
+\resumeItemListEnd
 \resumeSubHeadingListEnd
 
-\vspace{-5pt}
+\vspace{-2pt}
 \section{Publications}
 \begin{description}[font=$\bullet$,leftmargin=!]
-  \item \small{Zhu H., \underline{Zhao J. Y.} and Sultana N. 2021. C-Saw:
-          Designing an Embedded Language for Reconfigurable Software
-          Architecture. Manuscript submitted for review.}
-  \item \small{\underline{Zhao J. Y.}, Zhu H., Sultana N. and Loo B. T. 2020.
-          The Usability of a Debugger Designed for Compartmentalized Systems.
-            [Poster]. Annual Computer Security Applications Conference (ACSAC),
-          December 7-10, Online.}
-  \item \small{Carrasquillo S., \underline{Zhao J. Y.}, Zhu H., Sultana N. and
-          Loo B. T. 2020. A Case Study of Fine-Grained Software
-          Compartmentalization using cURL. [Poster]. Annual Computer Security
-          Applications Conference (ACSAC), December 7-10, Online.}
+  \item \small{H. Zhu, \textbf{J. Zhao} and N. Sultana, ``C-Saw: A DSL for
+          Describing and Evolving Software Architecture by managing Distributed
+          Key-Value Tables,'' \textit{Manuscript submitted for review}, Oct.,
+          2022.}
+  \item \small{N. Sultana, H. Zhu, K. Zhong, Z. Zheng, R. Mao, D. Chauhan, S.
+          Carrasquillo, \textbf{J. Zhao}, L. Shi, N. Vasilakis and B. T. Loo,
+          ``Towards Practical Application-level Support for Privilege
+          Separation,'' in \textit{Annu. Comput. Secur. Appl. Conf. (ACSAC
+            2022)}, Austin, Texas, USA, Dec. 5-9, 2022.}
 \end{description}
-\vspace{-5pt}
 
+\vspace{-2pt}
+\section{Presentations and Posters}
+\begin{description}[font=$\bullet$,leftmargin=!]
+  \item \small{\textbf{J. Zhao}, H. Zhu, N. Sultana and B. T. Loo, ``The
+          Usability of a Debugger Designed for Compartmentalized Systems,'' in
+          \textit{Annu. Comput. Secur. Appl. Conf. (ACSAC 2020)}, Dec. 7-11,
+          2020, [Online]. Available:
+          \href{https://www.acsac.org/2020/program/poster-wips/2020-poster-09\%20The\%20Usability\%20of\%20a\%20Debugger\%20Designed\%20for\%20Compartmentalized\%20Systems.pdf}{here}.
+        }
+  \item \small{S. Carrasquillo, \textbf{J. Zhao}, H. Zhu, N. Sultana and B. T.
+          Loo, ``A Case Study of Fine-Grained Software Compartmentalization
+          using cURL,'' in \textit{Annu. Comput. Secur. Appl. Conf. (ACSAC
+            2020)}, Dec. 7-11, 2020, [Online]. Available:
+          \href{https://www.acsac.org/2020/program/poster-wips/2020-poster-10-A\%20Case\%20Study\%20of\%20Fine-Grained\%20Software\%20Compartmentalization\%20using\%20cURL.pdf}{here}.
+        }
+\end{description}
+
+\vspace{-2pt}
 \section{Honors and Awards}
 \begin{description}[font=$\bullet$]
-  \item {First Class College Individual Scholarship - Sichuan University}
+  \item \small{First Class College Individual Scholarship - Sichuan University}
         \vspace{-5pt}
-  \item {Second Class College Individual Scholarship - Sichuan University}
+  \item \small{Second Class College Individual Scholarship - Sichuan University}
         \vspace{-5pt}
 \end{description}
 
