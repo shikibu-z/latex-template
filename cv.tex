@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass{article}
 \usepackage[T1]{fontenc}
 \usepackage{libertine}
 \usepackage{libertinust1math}
@@ -94,6 +94,23 @@
 
 \section{Research Experience}
 \resumeSubHeadingListStart
+\resumeSubheading{Research Assistant, University of Arizona}
+{Tucson, AZ}
+{Under the supervision of Dr. Lei Cao}{Jan 2023 - Present}
+
+\resumeItemListStart
+\resumeItem{Straggler Mitigation for Cloud Databases}
+{Proposed an improved computing layer to mitigate the straggler problem for
+  cloud databases with limited computing resources through task replication.
+  Developed a cache management system to duplicate and manage hot caches for
+  replicated tasks in order to further reduce the latency caused by reading the
+  remote storage layer. Improved the consistent hashing based scheduling
+  mechanism to better utilize multiple copies of caches while balancing skewed
+  workloads.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\resumeSubHeadingListStart
 \resumeSubheading{Research Assistant, NetDB@Penn Distributed Systems Lab}
 {Philadelphia, PA}
 {Under the supervision of Dr. Boon Thau Loo, SEAS UPenn}{May 2020 - Aug. 2021}
@@ -130,30 +147,30 @@
 \vspace{-2pt}
 \section{Publications}
 \begin{description}[font=$\bullet$,leftmargin=!]
-  \item \small{H. Zhu, \textbf{J. Zhao} and N. Sultana, ``C-Saw: A DSL for
-          Describing and Evolving Software Architecture by managing Distributed
-          Key-Value Tables,'' \textit{Manuscript submitted for review}, Oct.,
-          2022.}
-  \item \small{N. Sultana, H. Zhu, K. Zhong, Z. Zheng, R. Mao, D. Chauhan, S.
-          Carrasquillo, \textbf{J. Zhao}, L. Shi, N. Vasilakis and B. T. Loo,
-          ``Towards Practical Application-level Support for Privilege
-          Separation,'' in \textit{Annu. Comput. Secur. Appl. Conf. (ACSAC
-            2022)}, Austin, Texas, USA, Dec. 5-9, 2022.}
+  \item \small{Henry Zhu, \textbf{Junyong Zhao} and Nik Sultana. \textit{A
+            Domain-Specific Language for Reconfigurable, Distributed Software
+            Architecture}, \textbf{APDCM Workshop}, May 2023. Available:
+          \href{https://apdcm.iss-j.org/doku.php?id=accepted2023}{link}.}
+  \item \small{Nik Sultana, Henry Zhu, Ke Zhong, Zhilei Zheng, Ruijie Mao,
+          Digvijaysinh Chauhan, Stephen Carrasquillo, \textbf{Junyong Zhao}, Lei
+          Shi, Nikos Vasilakis, and Boon Thau Loo. \textit{Towards Practical
+            Application-level Support for Privilege Separation}, Proceedings of
+          \textbf{ACSAC}, December 2022. Available:
+          \href{https://dl.acm.org/doi/pdf/10.1145/3564625.3564664}{link}.}
 \end{description}
 
 \vspace{-2pt}
 \section{Presentations and Posters}
 \begin{description}[font=$\bullet$,leftmargin=!]
-  \item \small{\textbf{J. Zhao}, H. Zhu, N. Sultana and B. T. Loo, ``The
-          Usability of a Debugger Designed for Compartmentalized Systems,'' in
-          \textit{Annu. Comput. Secur. Appl. Conf. (ACSAC 2020)}, Dec. 7-11,
-          2020, [Online]. Available:
-          \href{https://www.acsac.org/2020/program/poster-wips/2020-poster-09\%20The\%20Usability\%20of\%20a\%20Debugger\%20Designed\%20for\%20Compartmentalized\%20Systems.pdf}{here}.
+  \item \small{\textbf{Junyong Zhao}, Henry Zhu, Nik Sultana and Boon Thau Loo.
+          \textit{The Usability of a Debugger Designed for Compartmentalized
+            Systems}, \textbf{ACSAC}, December 2020. Available:
+          \href{https://www.acsac.org/2020/program/poster-wips/2020-poster-09\%20The\%20Usability\%20of\%20a\%20Debugger\%20Designed\%20for\%20Compartmentalized\%20Systems.pdf}{link}.
         }
-  \item \small{S. Carrasquillo, \textbf{J. Zhao}, H. Zhu, N. Sultana and B. T.
-          Loo, ``A Case Study of Fine-Grained Software Compartmentalization
-          using cURL,'' in \textit{Annu. Comput. Secur. Appl. Conf. (ACSAC
-            2020)}, Dec. 7-11, 2020, [Online]. Available:
+  \item \small{Stephen Carrasquillo, \textbf{Junyong Zhao}, Henry Zhu, Nik
+          Sultana and Boon Thau Loo. \textit{A Case Study of Fine-Grained
+            Software Compartmentalization using cURL}, \textbf{ACSAC}, December
+          2020. Available:
           \href{https://www.acsac.org/2020/program/poster-wips/2020-poster-10-A\%20Case\%20Study\%20of\%20Fine-Grained\%20Software\%20Compartmentalization\%20using\%20cURL.pdf}{here}.
         }
 \end{description}
