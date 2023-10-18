@@ -7,105 +7,49 @@
 \usepackage[T1]{fontenc}
 \usepackage{libertine}
 
+\title{Statement of Purpose}
+\author{Junyong Zhao}
+\date{October 16, 2023}
+
 \begin{document}
+\maketitle
 
-As a master's student currently studying at the University of Pennsylvania, I am
-deeply drawn by the academic environment at Penn and I would like to apply for
-the doctoral program in computer and information science, focusing on
-distributed systems, networks, and operating systems.
+\section{Research Projects}
+I am currently working on a research project that focuses on workload balancing
+for storage disaggregated cloud database. This project aims to mitigate workload
+imbalance due to skewed scan requests and reduce the tail latency due to
+workload imbalance. This project is currently in the experiment and evaluation
+phase and we are planning to make a submission during this semester.
 
-My interest in these fields dates back to my undergraduate time when I was
-struck by how operating and network systems designed for the general-purpose
-machine have extended the computing power to many other subjects, such as CAD
-simulation in civil engineering. The computer system which powers up data
-centers and cloud platforms has become a vital infrastructure that we almost
-cannot live without and is still playing an important role in reshaping, and
-eventually, changing the world. Despite varieties of applications, there are
-still many research hot spots such as novel structures for software security,
-improving the scale and performance of data warehouses, and adaptation for
-upcoming technologies like deep learning and virtual reality. It is my very
-intention to devote myself to such an inspiring area and build up an academic
-career.
+\section{Driving Forces}
+I am the main driving force behind this project. The problem we are trying to
+solve is derived from the straggler problem in distributed systems. Advised by
+Dr. Lei Cao, we settled a general direction of using replications to achieve
+lower latency based on existing consistent hashing architecture. I did a
+comprehensive literature review to identify related works in other domains such
+as MapReduce systems and Memcached. I proposed an initial solution that actively
+copy hot data and developed a primitive simulation framework with Ryan Murphy, a
+former master student in the department. Due to the complexity and existence of
+related work, I proposed a second solution that improves consistent hashing with
+trackable random jumps. I have further improved the existing simulation
+framework to support the newer version of the solution and I am currently
+working on implementing evaluation baselines.
 
-Motivated by such interest, I joined a dual degree program in computer and
-information science at Penn. Many intensive program course materials combined
-with practical orientated projects have provided me with solid background
-knowledge in most major topics in computer science, as well as programming and
-problem-solving skills. We were asked most of the time to implement from scratch
-what we have learned in the class. For example, we implemented a Penn-OS in C
-with a shell, scheduler, memory management unit, and a FAT file system with
-minimum library functions allowed in CIS548 to gain a full picture of different
-components of the operating system. We also designed a relational database that
-could be deployed to the web with a self-programmed front-end through AWS in
-CIS550, and a simple network protocol similar to RTSP to stream music in
-real-time with the corresponding client and server-side implemented by ourselves
-in CIS553. I learned deeply about OS design and implementation, database and
-information systems, as well as networked systems, and many other subjects in
-computer science. And it could be reflected from my grades that I put a lot of
-effort to excel these courses and to get the best of them.
-
-I have also participated in scientific research to gain experience in academic
-skills. I joined professor Boon Thau Loo's lab in the distributed
-information-centric system as a research assistant from May 2020 till August
-2021. During my RA time, I worked closely with Dr. Nik Sultana, a previous
-postdoc at Penn, and Henry Zhu, a Penn graduate currently working at Amazon.
-Focusing mainly on software compartmentalization, I worked on several projects
-regarding debugging, serializing, and re-configuring existing software in a
-distributed fashion. I created a front-end for the debugger designed for
-compartmentalized software and the front-end can easily control and communicate
-with multiple processes corresponding to the compartments that require
-debugging. I also contributed to the implementation of a serializer designed for
-C-style data structures, which is used in generating required data from memory
-to pass between different compartments. By analyzing with Valgrind, I was able
-to locate memory leaks and corrected the serializer's garbage collection
-behavior corresponding to different data structures like a linked list or binary
-tree.
-
-The project to which I put the most effort during my RA time is re-configuring
-software in a distributed fashion with a novel architecture named C-SAW. We
-analyzed several popular software, such as Redis and cURL, and focused on how to
-improve them by introducing state-management abstraction. My work in this
-project resides mainly on re-configuring cURL and the overhead evaluation of the
-modified version of cURL and Redis. To make such modifications on cURL, I
-analyzed the general design of cURL, identified the data structure to monitor,
-and serialized it with the previously mentioned tool. By modifying the source
-and integrating it with a compartmentalization library, I was able to implement
-constant remote auditing of cURL's download speed in separated machines. In
-terms of evaluation, I designed a whole set of scripts to automate the testing
-process. The new cURL was compared against the original version in terms of
-execution time. Newly implemented features in Redis, such as fail-over and
-sharding, were also tested through query speed variation and cumulative
-distribution functions of each shard. Our results regarding this novel structure
-were very exciting, and the resulting paper was submitted for review.
-
-I gained a lot in many ways from my RA experience, and it will no doubt be a
-unique strength of mine in a doctoral program. I can think and act more
-analytically and independently when facing academic problems, which often do not
-have existing solutions to lookup. Many unexpected behaviors in pipelining when
-retrofitting large systems like cURL taught me to use tools such as GDB in
-multiprocess debugging and GNU gprof to analyze unprecedented situations and
-identify possible factors causing the trouble. And I was also introduced to
-various comparison measurements and required to figure out a compelling way to
-evaluate different types of features when designing the evaluation scripts for
-Redis. The 2020 pandemic has also leveled the difficulty of communication, and
-this RA experience greatly improved my ability to work in a team and communicate
-actively with other members.
-
-After the beginning of my master's program, I enjoyed every day spend at Penn
-and it is my sincere hope to continue my academic development here. I believe
-the Ph.D. program of CIS at Penn is particularly well-aligned with my interests
-and I would like to continue working with Prof. Boon Thau Loo and Vincent Liu.
-In the Flightplan project, Prof. Boon adopted a similar logic as I have
-experienced to dis-aggregate P4 programs and map them to several, possibly
-heterogeneous, dataplanes, which could empower its computing capability in a
-single target's recourse. Their recent collaborative work on evaluating the
-performance overhead of dis-aggregated data centers has also shown many
-potential research opportunities, such as DDC-aware buffer pool policy, new cost
-models for query planning and optimization, and improving parallel DBMS to avoid
-unnecessary data shuffling. Given my experiences in academic research, being a
-Ph.D. student at Penn would be very ideal for my academic career. I strongly
-believe that this program will fulfill my passion for distributed and network
-systems, and allow me to leverage my background and skills to contribute to the
-program's diversity.
+\section{Contributions to the Field}
+For storage disaggregated database, latency is an important performance metric.
+Balancing the workload for each node will help reduce the probability of
+stragglers and therefore, reduce tail latency. It should also be noticed that
+unlike other local database, storage disaggregated database in the cloud has an
+extra cost in reading from the remote storage layer, and reuse cache on each
+node is also an important aspect in reducing latency. To address these
+requirements, consistent hashing has served as a primary scheduling mechanism
+with two main advantages: 1) it preserves cache locality by scheduling similar
+tasks together, and 2) it doesn't require rehash when nodes fail or join the
+system. However, the consistent hashing will not balance skewed workload if a
+lot of scan requests favor some hot data. Our project contribute to solve this
+problem by reassign requests to other non-overloaded nodes. During this process,
+we also use trackable random jump to preserve cache locality so that the
+reassigned requests will reuse cached data on computing nodes as much as
+possible in order to avoid extra cost of reading remote storage.
 
 \end{document}

@@ -23,7 +23,7 @@
 \LoadClass[letterpaper, oneside, 11pt]{article}[2005/09/16]
 
 %% Margins of Text Pages
-\RequirePackage[head=0.75in, bottom=0.75in, left=0.75in, right=0.75in]{geometry}
+\RequirePackage[head=1in, bottom=1in, left=1in, right=1in]{geometry}
 
 %% Authors and Partners
 % \HWauthor{Name}{e-mail}: your name and school e-mail.
@@ -32,6 +32,7 @@
 
 \RequirePackage{ifthen}
 \makeatletter
+
 \newcommand{\HWauthor}[2]{
   \ifthenelse{\isundefined{\theHWauthors}}{
     \def\theHWauthors{#1\\#2}
@@ -39,13 +40,14 @@
   {
     \g@addto@macro\theHWauthors{\and #1\\#2}
   }
-  \ifthenelse{\isundefined{\theHWauthorsatheader}}{%
+  \ifthenelse{\isundefined{\theHWauthorsatheader}}{
     \def\theHWauthorsatheader{#1}
   }
   {
     \g@addto@macro\theHWauthorsatheader{, #1}
   }
 }
+
 \newcommand{\HWno}[1]{
   \ifthenelse{\isundefined{\theHWno}}{
     \def\theHWno{#1}
@@ -54,6 +56,7 @@
     \let\theHWno{#1}
   }
 }
+
 \newcommand{\HWcourse}[1]{
   \ifthenelse{\isundefined{\theHWcourse}}{
     \def\theHWcourse{#1}
@@ -62,9 +65,11 @@
     \let\theHWcourse{#1}
   }
 }
+
 \newcommand{\HWextension}{
   \def\theHWextension{Yes}
 }
+
 \makeatother
 
 % \HWpartner{Name}: Declare somebody you worked with on the homework.
@@ -72,6 +77,7 @@
 %                   multiple times. Relative ordering is preserved.
 
 \makeatletter
+
 \newcommand{\HWpartner}[1]{
   \ifthenelse{\isundefined{\theHWpartners}}{
     \def\theHWpartners{#1}
@@ -80,6 +86,7 @@
     \g@addto@macro\theHWpartners{, #1}
   }
 }
+
 \makeatother
 
 %% Problem Numbering and Sectioning
@@ -87,20 +94,22 @@
 \newcounter{theHWproblem}
 \setcounter{theHWproblem}{1}
 \newcounter{theHWsubproblem}[theHWproblem]
-\newcommand{\HWproblem}{%
+
+\newcommand{\HWproblem}{
   \subsection*{Question \arabic{theHWproblem}}  % change for problem title
   \addtocounter{theHWproblem}{1}
   \setcounter{theHWsubproblem}{1}
 }
-\titleformat{\subsubsection}[runin]{\bfseries}{}{}{}[)]
-\newcommand{\HWsubproblem}{%
+
+\titleformat{\subsubsection}[runin]{\bfseries}{}{}{}[]
+\newcommand{\HWsubproblem}{
   \subsubsection*{\roman{theHWsubproblem}}  % change for different numbering
   \addtocounter{theHWsubproblem}{1}
 }
 
 %% Headers and Footers of Text Pages
 \RequirePackage{fancyhdr}
-\pagestyle{fancy}
+\pagestyle{plain}
 \fancyhead[R]{\theHWauthorsatheader}
 \fancyhead[C]{\theHWcourse}
 \fancyhead[L]{Homework \theHWno}  % change for different titles
